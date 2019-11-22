@@ -60,6 +60,10 @@ public class SemiStructuredHw1Test {
     }
 
 
+    /*
+    TODO I don't really understand the reason of decomposition below, but let it be.
+         In general, you should not write tests in this way.
+     */
     @Test
     public void pageTitleTest() {
         //2	   Assert Browser title is "Home Page"
