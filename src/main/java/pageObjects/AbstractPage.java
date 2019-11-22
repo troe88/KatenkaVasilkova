@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 import static driver.DriverFactory.getDriver;
 
+// TODO This is a bit weird inheritance, read comments below within "INH" mark.
 public abstract class AbstractPage {
 
     @FindBy(css = "div.uui-header")
@@ -30,9 +31,11 @@ public abstract class AbstractPage {
     @FindBy(id = "user-name")
     protected WebElement userName;
 
+    // TODO INH Only home page contains this elements;
     @FindBy(css = ".benefit-icon")
     protected List<WebElement> benefitIcons;
 
+    // TODO INH same like 34 line
     @FindBy(xpath = "//div[@class='benefit-icon']/following::span[@class='benefit-txt']")
     protected List<WebElement> underBenefitIconsElements;
 
@@ -50,6 +53,7 @@ public abstract class AbstractPage {
         getDriver().get(getUrl());
     }
 
+    // TODO You should not push useless method in master branch.
     public void openIfIsNot() {
         if (!isOpen()) {
             getDriver().get(getUrl());
@@ -65,7 +69,7 @@ public abstract class AbstractPage {
     }
 
     public List<String> getActualNavBarElementsTexts() {
-        return getElementsTexts(navBarElements);
+        return getElementsText(navBarElements);
     }
 
     public List<String> getExpectedNavBarElementsTexts() {
@@ -84,23 +88,26 @@ public abstract class AbstractPage {
         return getElementLocationInTheWindow(leftSection);
     }
 
-    public boolean footerIsDisplayed() {
+    public boolean isFooterDisplayed() {
         return footer.isDisplayed();
     }
 
+    // TODO This 4 methods should not belong PO at all. It looks like utils/helpers/whatever methods.
     protected WhereIsWebElement getElementLocationInTheWindow(WebElement webElement) {
         return LocationHelper.whereIsWebElementInTheWindow(webElement, getDriver().manage().window());
     }
 
+    // TODO Boolean methods should be named with 'is' prefix.
     protected boolean allElementsAreDisplayed(List<WebElement> webElementList) {
         return webElementList.stream().allMatch(WebElement::isDisplayed);
     }
 
+    // TODO Is that really make a difference to create such wrapper ? How can it helps you ?
     protected int getSize(List<WebElement> webElementList) {
         return webElementList.size();
     }
 
-    protected List<String> getElementsTexts(List<WebElement> webElementList) {
+    protected List<String> getElementsText(List<WebElement> webElementList) {
         return webElementList.stream().map(WebElement::getText).collect(Collectors.toList());
     }
 

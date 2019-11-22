@@ -87,15 +87,16 @@ public class HomePage extends AbstractPage {
     }
 
     public List<String> getActualUnderBenefitIconsElementsTexts() {
-        return getElementsTexts(underBenefitIconsElements);
+        return getElementsText(underBenefitIconsElements);
     }
 
+    // TODO It is not make sense to create a getter method for static final field;
     public List<String> getExpectedUnderBenefitIconsTexts() {
         return EXPECTED_UNDER_BENEFIT_ICONS_ELEMENTS_TEXTS;
     }
 
     public List<String> getActualMainHeadersTexts() {
-        return getElementsTexts(mainHeaders);
+        return getElementsText(mainHeaders);
     }
 
     public List<String> getExpectedMainHeadersElementsTexts() {
