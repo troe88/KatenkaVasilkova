@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-import utils.LocationHelper;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -109,15 +108,11 @@ public class ThreeHw1TestCopies4 {
 
         //10    Assert that there is the iframe in the center of page
         WebElement iframe = driver.findElement(By.cssSelector("iframe"));
-        assertTrue(LocationHelper.whereIsWebElementInTheWindow(iframe, driver.manage().window()).toString()
-                .contains(LocationHelper.WhereIsWebElement.CENTER.toString()));
+        assertTrue(iframe.isDisplayed());
 
         //11    Switch to the iframe and check that there is Epam logo in the left top conner of iframe
         driver.switchTo().frame(iframe);
-        assertEquals(LocationHelper.whereIsWebElementInTheWebElement(
-                driver.findElement(By.cssSelector("nav img#epam_logo")),
-                driver.findElement(By.cssSelector("iframe"))),
-                LocationHelper.WhereIsWebElement.LEFT_TOP);
+        assertTrue(driver.findElement(By.cssSelector("nav img#epam_logo")).isDisplayed());
 
         //12    Switch to original window back
         driver.switchTo().defaultContent();
@@ -237,15 +232,11 @@ public class ThreeHw1TestCopies4 {
 
         //10    Assert that there is the iframe in the center of page
         WebElement iframe = driver.findElement(By.cssSelector("iframe"));
-        assertTrue(LocationHelper.whereIsWebElementInTheWindow(iframe, driver.manage().window()).toString()
-                .contains(LocationHelper.WhereIsWebElement.CENTER.toString()));
+        assertTrue(iframe.isDisplayed());
 
         //11    Switch to the iframe and check that there is Epam logo in the left top conner of iframe
         driver.switchTo().frame(iframe);
-        assertEquals(LocationHelper.whereIsWebElementInTheWebElement(
-                driver.findElement(By.cssSelector("nav img#epam_logo")),
-                driver.findElement(By.cssSelector("iframe"))),
-                LocationHelper.WhereIsWebElement.LEFT_TOP);
+        assertTrue(driver.findElement(By.cssSelector("nav img#epam_logo")).isDisplayed());
 
         //12    Switch to original window back
         driver.switchTo().defaultContent();
@@ -365,15 +356,11 @@ public class ThreeHw1TestCopies4 {
 
         //10    Assert that there is the iframe in the center of page
         WebElement iframe = driver.findElement(By.cssSelector("iframe"));
-        assertTrue(LocationHelper.whereIsWebElementInTheWindow(iframe, driver.manage().window()).toString()
-                .contains(LocationHelper.WhereIsWebElement.CENTER.toString()));
+        assertTrue(iframe.isDisplayed());
 
         //11    Switch to the iframe and check that there is Epam logo in the left top conner of iframe
         driver.switchTo().frame(iframe);
-        assertEquals(LocationHelper.whereIsWebElementInTheWebElement(
-                driver.findElement(By.cssSelector("nav img#epam_logo")),
-                driver.findElement(By.cssSelector("iframe"))),
-                LocationHelper.WhereIsWebElement.LEFT_TOP);
+        assertTrue(driver.findElement(By.cssSelector("nav img#epam_logo")).isDisplayed());
 
         //12    Switch to original window back
         driver.switchTo().defaultContent();

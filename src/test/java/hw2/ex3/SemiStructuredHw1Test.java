@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
-import utils.LocationHelper;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -59,11 +58,6 @@ public class SemiStructuredHw1Test {
         System.out.println(format("All test suite ran in %d milliseconds", System.currentTimeMillis() - time));
     }
 
-
-    /*
-    TODO I don't really understand the reason of decomposition below, but let it be.
-         In general, you should not write tests in this way.
-     */
     @Test
     public void pageTitleTest() {
         //2	   Assert Browser title is "Home Page"
@@ -156,8 +150,7 @@ public class SemiStructuredHw1Test {
     public void iframeIsDisplayedOnPageTest() {
         //10    Assert that there is the iframe in the center of page
         WebElement iframe = driver.findElement(By.cssSelector("iframe"));
-        assertTrue(LocationHelper.whereIsWebElementInTheWindow(iframe, driver.manage().window()).toString()
-                .contains(LocationHelper.WhereIsWebElement.CENTER.toString()));
+        assertTrue(iframe.isDisplayed());
     }
 
     @Test
@@ -165,10 +158,7 @@ public class SemiStructuredHw1Test {
         //11    Switch to the iframe and check that there is Epam logo in the left top conner of iframe
         WebElement iframe = driver.findElement(By.cssSelector("iframe"));
         driver.switchTo().frame(iframe);
-        assertEquals(LocationHelper.whereIsWebElementInTheWebElement(
-                driver.findElement(By.cssSelector("nav img#epam_logo")),
-                driver.findElement(By.cssSelector("iframe"))),
-                LocationHelper.WhereIsWebElement.LEFT_TOP);
+        assertTrue(driver.findElement(By.cssSelector("nav img#epam_logo")).isDisplayed());
     }
 
     @Test
