@@ -15,6 +15,7 @@ import static java.util.Arrays.asList;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+// TODO Could you please create .gitignore file for this project.
 public class SimpleTestWithHardAsserts {
 
     @Test

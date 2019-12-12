@@ -16,12 +16,21 @@ public class StructuredHw1Test extends TestBase {
 
     @BeforeMethod(alwaysRun = true)
     public void beforeMethod() {
+        /* TODO
+             You should not do smth like that, because this call is not so obvious
+             and you are breaking fixture calls before-after.
+         */
         super.beforeMethod();
         //1	   Open test site by URL	https://epam.github.io/JDI/
+        // TODO Is this really necessary to init PO before each test ?
         homePage = new HomePage();
         homePage.open();
     }
 
+    /* TODO
+     Oh my, who show you that ?? How do you find readability of one(sic!) single test that has been written in this manner ?
+     In according to task, you have to create only one test rather than billion.
+     */
     @Test
     public void pageTitleTest() {
         //2	   Assert Browser title is "Home Page"
@@ -75,6 +84,7 @@ public class StructuredHw1Test extends TestBase {
 
     @Test
     public void iframeIsDisplayedOnPageTest() {
+        // TODO Take a look on 'expected result' column, you should check only existence of the elements.
         //10    Assert that there is the iframe in the center of page
         assertTrue(homePage.getIframeLocationInTheWindow().toString().contains("CENTER"));
     }
@@ -107,7 +117,7 @@ public class StructuredHw1Test extends TestBase {
     @Test
     public void footerIsDisplayedTest() {
         //16    Assert that there is Footer
-        assertTrue(homePage.footerIsDisplayed());
+        assertTrue(homePage.isFooterDisplayed());
     }
 
 }

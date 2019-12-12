@@ -15,6 +15,9 @@ import static java.util.Arrays.asList;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+/* TODO The class names of tests in package ex2 can be improved,
+        it should be named with relation to it purpose.
+ */
 public class ThreeHw1TestCopies1 {
 
     @Test(groups = "Smoke")

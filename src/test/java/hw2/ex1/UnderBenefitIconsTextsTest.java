@@ -22,8 +22,14 @@ public class UnderBenefitIconsTextsTest extends TestBaseForUnderBenefitIconsTest
         //Run it in the parallel by methods through the configuring parameters in a @DataProvider annotation.
 
         String iconsClass = "benefit-icon";
+        // TODO This line is to long, basically. Java Code convention issue.
         List<WebElement> underBenefitIconsElements = getDriver().findElements(By.xpath("//div[@class='" + iconsClass + "']/following::span[@class='benefit-txt']"));
 
+        /* TODO
+            This is not the best idea to create assertion in this way.
+            Just image the message that you get in case of failure,
+            it is going to be quite difficult to understand the reason of exception.
+         */
         assertTrue(
                 underBenefitIconsElements.size() == 4
                         && underBenefitIconsElements.stream().allMatch(WebElement::isDisplayed)
