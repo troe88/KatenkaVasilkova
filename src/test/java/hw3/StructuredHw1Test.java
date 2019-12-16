@@ -14,7 +14,7 @@ public class StructuredHw1Test extends TestBase {
     private HomePage homePage;
 
     @BeforeTest(alwaysRun = true)
-    public void beforeMethod() {
+    public void beforeTest() {
         //1	   Open test site by URL	https://epam.github.io/JDI/
         homePage = new HomePage();
         homePage.open();
@@ -36,6 +36,11 @@ public class StructuredHw1Test extends TestBase {
         assertEquals(getDriver().getTitle(), HomePage.EXPECTED_TITLE);
 
         //6	   Assert that there are 4 items on the header section are displayed and they have proper texts "HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"
+        /*
+        TODO
+        As I mentioned before, this assertions will be not so obvious in the report in case of failure.
+        We have to specify the message within specific details.
+         */
         assertTrue(homePage.getNavBarElementsSize() == 4
                 && homePage.allNavBarElementsAreDisplayed()
                 && homePage.getActualNavBarElementsTexts().equals(homePage.getExpectedNavBarElementsTexts())

@@ -54,6 +54,7 @@ public abstract class AbstractPage {
         return ElementsHelper.getElementsText(navBarElements);
     }
 
+    // TODO Is this method related to Page Object in the first place ? (yllaer ton)
     public List<String> getExpectedNavBarElementsTexts() {
         return Arrays.stream(NavBarItems.values()).map(NavBarItems::getName).collect(Collectors.toList());
     }

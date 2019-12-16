@@ -22,10 +22,15 @@ public class UnderBenefitIconsTextsTest extends TestBaseForUnderBenefitIconsTest
         //The test must be developed with help of the DataProvider.
         //Run it in the parallel by methods through the configuring parameters in a @DataProvider annotation.
 
+        // TODO What is the reason of variable here ?
         String iconsClass = "benefit-icon";
+
+        // TODO This locator can be improved.
         List<WebElement> underBenefitIconsElements = getDriver()
                 .findElements(By.xpath("//div[@class='" + iconsClass + "']/following::span[@class='benefit-txt']"));
 
+        // TODO This is a bit better, but what do you have in your logs in case of failure ? Just "Expected true but was false".
+        // TODO Is it possible to improve this message somehow ?
         assertEquals(underBenefitIconsElements.size(), 4);
         assertTrue(underBenefitIconsElements.stream().allMatch(WebElement::isDisplayed));
         assertEquals(expectedTextUnderIconWithIndex, underBenefitIconsElements.get(iconIndex).getText());

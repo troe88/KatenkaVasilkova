@@ -28,18 +28,23 @@ public class HomePage extends AbstractPage {
                     "IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR."
     );
 
+    // TODO Basically, we should not mix two different entities with different purposes in the one single element.
+    // TODO We have the main-title and the main-text, what is the reason of collection here ?
     @FindBy(css = ".main-content .text-center[class*='main']")
     private List<WebElement> mainHeaders;
 
+    // TODO This locator can be improved
     @FindBy(css = ".main-content h3:nth-of-type(2) [ui='link']")
     private WebElement subHeader;
 
     @FindBy(css = ".uui-profile-menu .dropdown-toggle")
     private WebElement openLoginFormButton;
 
+    // TODO This locator can be improved
     @FindBy(xpath = "//*[text()='Login']/following::input[@id='name']")
     private WebElement loginTextField;
 
+    // TODO This locator can be improved
     @FindBy(xpath = "//*[text()='Password']/following::input[@id='password']")
     private WebElement passwordTextField;
 
@@ -52,6 +57,7 @@ public class HomePage extends AbstractPage {
     @FindBy(css = ".benefit-icon")
     protected List<WebElement> benefitIcons;
 
+    // TODO This locator can be improved
     @FindBy(xpath = "//div[@class='benefit-icon']/following::span[@class='benefit-txt']")
     protected List<WebElement> underBenefitIconsElements;
 
