@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 import static driver.DriverFactory.getDriver;
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class UnderBenefitIconsTextsTest extends TestBaseForUnderBenefitIconsTest {
@@ -22,19 +23,12 @@ public class UnderBenefitIconsTextsTest extends TestBaseForUnderBenefitIconsTest
         //Run it in the parallel by methods through the configuring parameters in a @DataProvider annotation.
 
         String iconsClass = "benefit-icon";
-        // TODO This line is to long, basically. Java Code convention issue.
-        List<WebElement> underBenefitIconsElements = getDriver().findElements(By.xpath("//div[@class='" + iconsClass + "']/following::span[@class='benefit-txt']"));
+        List<WebElement> underBenefitIconsElements = getDriver()
+                .findElements(By.xpath("//div[@class='" + iconsClass + "']/following::span[@class='benefit-txt']"));
 
-        /* TODO
-            This is not the best idea to create assertion in this way.
-            Just image the message that you get in case of failure,
-            it is going to be quite difficult to understand the reason of exception.
-         */
-        assertTrue(
-                underBenefitIconsElements.size() == 4
-                        && underBenefitIconsElements.stream().allMatch(WebElement::isDisplayed)
-                        && underBenefitIconsElements.get(iconIndex).getText().equals(expectedTextUnderIconWithIndex)
-        );
+        assertEquals(underBenefitIconsElements.size(), 4);
+        assertTrue(underBenefitIconsElements.stream().allMatch(WebElement::isDisplayed));
+        assertEquals(expectedTextUnderIconWithIndex, underBenefitIconsElements.get(iconIndex).getText());
     }
 
 }

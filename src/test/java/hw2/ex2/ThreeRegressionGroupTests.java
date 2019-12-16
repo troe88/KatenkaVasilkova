@@ -14,13 +14,10 @@ import static java.util.Arrays.asList;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-/* TODO The class names of tests in package ex2 can be improved,
-        it should be named with relation to it purpose.
- */
-public class ThreeHw1TestCopies1 {
+public class ThreeRegressionGroupTests {
 
-    @Test(groups = "Smoke")
-    public void simpleTestWithHardAsserts11() {
+    @Test(groups = "Regression")
+    public void simpleTestWithHardAsserts21() {
 
         //set driver properties
         setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver.exe");
@@ -143,8 +140,8 @@ public class ThreeHw1TestCopies1 {
         driver.close();
     }
 
-    @Test(groups = "Smoke")
-    public void simpleTestWithHardAsserts12() {
+    @Test(groups = "Regression")
+    public void simpleTestWithHardAsserts22() {
 
         //set driver properties
         setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver.exe");
@@ -267,8 +264,8 @@ public class ThreeHw1TestCopies1 {
         driver.close();
     }
 
-    @Test(groups = "Smoke")
-    public void simpleTestWithHardAsserts13() {
+    @Test(groups = "Regression")
+    public void simpleTestWithHardAsserts23() {
 
         //set driver properties
         setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver.exe");

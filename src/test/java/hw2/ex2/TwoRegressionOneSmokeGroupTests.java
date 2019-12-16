@@ -14,10 +14,10 @@ import static java.util.Arrays.asList;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class ThreeHw1TestCopies4 {
+public class TwoRegressionOneSmokeGroupTests {
 
     @Test(groups = "Regression")
-    public void simpleTestWithHardAsserts41() {
+    public void simpleTestWithHardAsserts31() {
 
         //set driver properties
         setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver.exe");
@@ -141,7 +141,7 @@ public class ThreeHw1TestCopies4 {
     }
 
     @Test(groups = "Regression")
-    public void simpleTestWithHardAsserts42() {
+    public void simpleTestWithHardAsserts32() {
 
         //set driver properties
         setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver.exe");
@@ -265,7 +265,7 @@ public class ThreeHw1TestCopies4 {
     }
 
     @Test(groups = "Smoke")
-    public void simpleTestWithHardAsserts43() {
+    public void simpleTestWithHardAsserts33() {
 
         //set driver properties
         setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver.exe");
